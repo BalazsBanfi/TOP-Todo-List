@@ -1,5 +1,8 @@
 # Dependency directories
 node_modules/
-
+src/
 # Optional npm cache directory
 .npm
+.gitignore
+.json
+webpack.config.js
