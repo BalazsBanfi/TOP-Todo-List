@@ -4,6 +4,7 @@ import { todos } from "./addTodos.js";
 import "./style.css";
 
 const todosList = new todos();
+renderPage();
 
 const addTodoBtn = document.querySelector("#submit");
 addTodoBtn.addEventListener("click", () => {
@@ -20,8 +21,19 @@ addTodoBtn.addEventListener("click", () => {
     priority,
     duedate,
   };
-  if (description) {
+  if (title) {
     todosList.addTodo(newTodo);
-    console.log(todosList);
+    form.style.display = "none";
+    add.style.display = "block";
+    renderPage();
   }
+});
+
+// Add new book button
+const form = document.querySelector("#form");
+const add = document.querySelector("#add");
+add.addEventListener("click", () => {
+  event.preventDefault();
+  form.style.display = "grid";
+  add.style.display = "none";
 });
